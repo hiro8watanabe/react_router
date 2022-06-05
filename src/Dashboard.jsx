@@ -5,6 +5,8 @@ export const Dashboard = () => {
     <div>
       <h1>Dashboardページです</h1>
       <Link to="/dashboard/999"> Parameter</Link>
+      <br />
+      <Link to="/dashboard/999?name=hogehoge"> Query Parameter</Link>
     </div>
   );
 };
