@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
 
 import { Home } from "../Home";
-import { Dashboard } from "../Dashboard";
 import { AboutRoutes } from "./AboutRoutes";
+import { DashboardRoutes } from "./DashboardRoutes";
 
 export const Router = () => {
   return (
@@ -26,9 +26,22 @@ export const Router = () => {
           </Switch>
         )}
       />
-      <Route path="/dashboard">
-        <Dashboard />
-      </Route>
+      <Route
+        path="/dashboard"
+        render={({ match: { url } }) => (
+          <Switch>
+            {DashboardRoutes.map((route) => (
+              <Route
+                key={route.path}
+                exact={route.exact}
+                path={`${url}${route.path}`}
+              >
+                {route.children}
+              </Route>
+            ))}
+          </Switch>
+        )}
+      />
     </Switch>
   );
 };

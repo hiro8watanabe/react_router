@@ -9,12 +9,12 @@ export const AboutRoutes = [
     children: <About />
   },
   {
-    path: "/detaileA",
+    path: "/detailA",
     exact: false,
     children: <AboutDetailA />
   },
   {
-    path: "/detaileB",
+    path: "/detailB",
     exact: false,
     children: <AboutDetailB />
   }
